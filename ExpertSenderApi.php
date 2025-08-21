@@ -136,7 +136,13 @@ class ExpertSenderApi extends EspBaseAPI
 
     public function getCampaignId($fromDate,$toDate)
     {
-        //function inpkementation
+        $request = '';
+        $baseUrl = trim("https://api3.esv2.com/v2/Api/Subscribers?apiKey=$this->apiKey1&email=$emailAddress&option=Full");
+        $result = $this->sendRequest('GET',$request,$baseUrl);
+        $xml = simplexml_load_string($result);
+        $json = json_encode($xml);
+        $response = json_decode($json,TRUE);
+        return $response;
     }
 
 }
