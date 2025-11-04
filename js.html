@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id = "demo" ></p>
+    <script>
+        let data = "";
+        const myobj = 
+        {
+            comapny :"Aptroid",
+            Employes_Count:500,
+            Roles:
+            [
+                {role:"front_end",employes:["a","b","c"]},
+                {role:"back_end",employes:["d","e"]}
+
+            ]
+        }
+
+        for(let i in myobj.Roles)
+        {
+            data += "<h2>" + myobj.Roles[i].role + "</h2>";
+            for(let j in myobj.Roles[i].employes)
+            data +=  myobj.Roles[i].employes[j] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = data;
+
+    </script>
+</body>
+</html> 
